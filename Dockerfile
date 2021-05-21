@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 EXPOSE 8501
 # ENTRYPOINT ["streamlit","run"]
 #CMD ["app.py"]
-ENTRYPOINT ["/bin/sh", "-c","setup.sh && streamlit run app.py"]
+ENTRYPOINT ["/bin/sh", "-c","/app/setup.sh && streamlit run app.py"]
