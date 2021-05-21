@@ -3,10 +3,10 @@ FROM python:3.7
 COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
-# RUN chmod +777 /app/setup.sh
-EXPOSE 8501
-ENTRYPOINT ["streamlit","run"]
-CMD ["app.py"]
+#EXPOSE 8501
+ENV STREAMLIT_SERVER_PORT=8501
+# ENTRYPOINT ["streamlit","run"]
+CMD ["streamlit run app.py"]
 
 # streamlit-specific commands for config
 ENV LC_ALL=C.UTF-8
