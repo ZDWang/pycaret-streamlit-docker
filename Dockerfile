@@ -1,12 +1,13 @@
 FROM python:3.7
 # FROM python:3.8-slim-buster
-COPY . /app
 WORKDIR /app
+COPY . .
 RUN pip install -r requirements.txt
 #EXPOSE 8501
-ENV STREAMLIT_SERVER_PORT=8501
+
 # ENTRYPOINT ["streamlit","run"]
-CMD ["streamlit run app.py"]
+# CMD streamlit run app.py
+CMD streamlit run --server.port $PORT app.py
 
 # streamlit-specific commands for config
 ENV LC_ALL=C.UTF-8
