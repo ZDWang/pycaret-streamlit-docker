@@ -5,8 +5,6 @@ COPY . .
 RUN pip install -r requirements.txt
 #EXPOSE 8501
 
-# ENTRYPOINT ["streamlit","run"]
-# CMD streamlit run app.py
 CMD streamlit run --server.port $PORT app.py
 
 # streamlit-specific commands for config
